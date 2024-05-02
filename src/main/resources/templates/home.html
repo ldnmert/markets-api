@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Akıllı Fiyat</title>
+<style>
+    .table-container {
+        overflow-x: auto; /* Yatay kaydırma */
+    }
+    .table {
+        display: flex; /* Tablo öğelerini yatay hizalama */
+    }
+    .table-cell {
+        flex: 0 0 auto; /* Hücrelerin boyutunu sabit tutar */
+        padding: 10px; /* Hücre içeriğine boşluk ekler */
+        border: 1px solid #ccc; /* Hücre çerçevesi */
+    }
+</style>
+</head>
+<body>
+    <div class="table-container">
+    migros
+        <div class="table">
+            <div class="table-cell" th:each="product : ${discountProductsMigros}">
+                <div th:text="${product.productName}"></div>
+                <div th:text="${product.price}"></div>
+            </div>
+        </div>
+    </div>
+     <div class="table-container">
+     carefour
+        <div class="table">
+            <div class="table-cell" th:each="product : ${indirimcare}">
+                <div th:text="${product.productName}"></div>
+                <div th:text="${product.price2}"></div>
+            </div>
+        </div>
+    </div>
+    
+      <div class="table-container">
+      a101
+        <div class="table">
+            <div class="table-cell" th:each="product : ${indirim101}">
+                <div th:text="${product.productName}"></div>
+                <div th:text="${product.price2}"></div>
+            </div>
+        </div>
+    </div>
+    
+     <div class="table-container">
+     bimm
+        <div class="table">
+            <div class="table-cell" th:each="product : ${indirimbim}">
+                <div th:text="${product.productName}"></div>
+                <div th:text="${product.price2}"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
